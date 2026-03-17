@@ -32,7 +32,7 @@
 !*.md
 !*.png
 !*.jpg
-
+![Waveform from thunderbird_fsm_tb](thunderbird_fsm_tb_behav.wcfg)
 # don't ignore .github
 !.github/
 !.github/**/*
