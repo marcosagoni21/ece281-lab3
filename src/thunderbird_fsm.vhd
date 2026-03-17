@@ -125,14 +125,12 @@ begin
         f_Q <= f_Q_next;
       end if;
      end process register_proc;
-        r_left(0) <= f_Q(6) or f_Q(2) or f_Q(1) or f_Q(0);
-        r_left(1) <= f_Q(6) or f_Q(1) or f_Q(0);
-        r_left(2) <= f_Q(6) or f_Q(0);
-        r_right(0) <= f_Q(6) or f_Q(5) or f_Q(4) or f_Q(3);
-        r_right(1) <= f_Q(6) or f_Q(3) or f_Q(4);
-        r_right(2) <= f_Q(6) or f_Q(3);
-     o_lights_L <= r_left;
-     o_lights_R <= r_right;
+     o_lights_L(0) <= f_Q(6) or f_Q(2) or f_Q(1) or f_Q(0);
+     o_lights_L(1) <= f_Q(6) or f_Q(1) or f_Q(0);
+     o_lights_L(2) <= f_Q(6) or f_Q(0);
+     o_lights_R(0) <= f_Q(6) or f_Q(5) or f_Q(4) or f_Q(3);
+     o_lights_R(1) <= f_Q(6) or f_Q(4) or f_Q(3);
+     o_lights_R(2) <= f_Q(6) or f_Q(3);
 	-----------------------------------------------------					   
 				  
 end thunderbird_fsm_arch;
