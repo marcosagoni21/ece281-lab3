@@ -123,14 +123,14 @@ begin
         r_right <= "000"; 
       elsif(rising_edge(i_clk)) then
         f_Q <= f_Q_next;
+      end if;
+     end process register_proc;
         r_left(0) <= f_Q(6) or f_Q(2) or f_Q(1) or f_Q(0);
         r_left(1) <= f_Q(6) or f_Q(1) or f_Q(0);
         r_left(2) <= f_Q(6) or f_Q(0);
         r_right(0) <= f_Q(6) or f_Q(5) or f_Q(4) or f_Q(3);
         r_right(1) <= f_Q(6) or f_Q(3) or f_Q(4);
         r_right(2) <= f_Q(6) or f_Q(3);
-      end if;
-     end process register_proc;
      o_lights_L <= r_left;
      o_lights_R <= r_right;
 	-----------------------------------------------------					   
