@@ -110,47 +110,37 @@ begin
 	   report "Error: Lights should be off after reset" severity failure;
 	w_left <= '1'; 
 	wait until rising_edge(w_clk);
-	wait for 1 ns;
     assert (w_lights_L = "001") 
         report "L1 Failed" severity error;
     wait until rising_edge(w_clk);
-	wait for 1 ns;
     assert (w_lights_L = "011") 
         report "L2 Failed" severity error;
     wait until rising_edge(w_clk);
-	wait for 1 ns;
     assert (w_lights_L = "111") 
         report "L3 Failed" severity error;
     wait until rising_edge(w_clk);
-	wait for 1 ns;
     assert (w_lights_L = "000") 
         report "Return to OFF failed" severity error;
         w_left <= '0';
         w_right <= '1'; 
     wait until rising_edge(w_clk);
-	wait for 1 ns;
     assert (w_lights_R = "001") 
         report "R1 Failed" severity error;
     wait until rising_edge(w_clk);
-	wait for 1 ns;
     assert (w_lights_R = "011") 
         report "R2 Failed" severity error;
     wait until rising_edge(w_clk);
-	wait for 1 ns;
     assert (w_lights_R = "111") 
         report "R3 Failed" severity error;
     wait until rising_edge(w_clk);
-	wait for 1 ns;
     assert (w_lights_R = "000") 
         report "Return to OFF failed" severity error;
         w_right <= '0';
         w_left <= '1'; w_right <= '1'; 
     wait until rising_edge(w_clk);
-	wait for 1 ns;
     assert (w_lights_L = "111" and w_lights_R = "111") 
         report "Hazards ON Failed" severity error;
     wait until rising_edge(w_clk);
-	wait for 1 ns;
     assert (w_lights_L = "000" and w_lights_R = "000") 
         report "Hazards OFF Failed" severity error;
         wait;
